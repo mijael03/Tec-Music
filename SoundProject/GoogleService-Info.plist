@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>14320350733-89cbsg9ph2ijgd6jf8r623nq028jor4e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.14320350733-89cbsg9ph2ijgd6jf8r623nq028jor4e</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC5S_e2ghFi-wX6VttWwy2k7MOhZTU48Lw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>14320350733</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.finalproject.SoundProject</string>
+	<key>PROJECT_ID</key>
+	<string>tecmusic-3dd41</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tecmusic-3dd41.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:14320350733:ios:976f503aa05745052c8744</string>
+</dict>
+</plist>

@@ -13,6 +13,32 @@
 		F336C7AD285D51C6008F1577 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F336C7AC285D51C6008F1577 /* Preview Assets.xcassets */; };
 		F336C7AF285D51C6008F1577 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F336C7AE285D51C6008F1577 /* Persistence.swift */; };
 		F336C7B2285D51C6008F1577 /* SoundProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F336C7B0285D51C6008F1577 /* SoundProject.xcdatamodeld */; };
+		F336C7B9285D601F008F1577 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F336C7B8285D601F008F1577 /* GoogleService-Info.plist */; };
+		F34C65042867F6F800350D17 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C65032867F6F800350D17 /* TabBar.swift */; };
+		F34C65062867F78A00350D17 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C65052867F78A00350D17 /* SearchView.swift */; };
+		F34C65082867F7FA00350D17 /* BibliotecaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C65072867F7FA00350D17 /* BibliotecaView.swift */; };
+		F34C650D2867FD6700350D17 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C650C2867FD6700350D17 /* Song.swift */; };
+		F34C65102867FEB200350D17 /* SongsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C650F2867FEB200350D17 /* SongsList.swift */; };
+		F34C65122867FEE400350D17 /* SongCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C65112867FEE400350D17 /* SongCard.swift */; };
+		F34C651428680B5100350D17 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C651328680B5100350D17 /* CellView.swift */; };
+		F34C651628680BFC00350D17 /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C651528680BFC00350D17 /* SongList.swift */; };
+		F34C651A28680CB600350D17 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C651928680CB600350D17 /* SearchBar.swift */; };
+		F34C651C286814C300350D17 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C651B286814C300350D17 /* AudioManager.swift */; };
+		F379BC0C285D654B00C4D72D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F379BC0B285D654B00C4D72D /* FirebaseAnalytics */; };
+		F379BC0E285D654B00C4D72D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F379BC0D285D654B00C4D72D /* FirebaseAuth */; };
+		F379BC10285D654B00C4D72D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F379BC0F285D654B00C4D72D /* FirebaseDatabase */; };
+		F379BC12285D654B00C4D72D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F379BC11285D654B00C4D72D /* FirebaseFirestore */; };
+		F379BC14285D654B00C4D72D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F379BC13285D654B00C4D72D /* FirebaseStorage */; };
+		F379BC16285D72A100C4D72D /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F379BC15285D72A100C4D72D /* ListView.swift */; };
+		F3EBEBA22862A1F5001EAAAF /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEBA12862A1F5001EAAAF /* BackgroundView.swift */; };
+		F3EBEBA62862A312001EAAAF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEBA52862A312001EAAAF /* LoginView.swift */; };
+		F3EBEBA82862A84C001EAAAF /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEBA72862A84C001EAAAF /* RegisterView.swift */; };
+		F3EBEBAC2862AF5F001EAAAF /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEBAB2862AF5E001EAAAF /* AppViewModel.swift */; };
+		F3EBEBAE2862BD22001EAAAF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEBAD2862BD22001EAAAF /* HomeView.swift */; };
+		F3F3F29F286912A7008FCE51 /* Adventure.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F3F3F29E286912A7008FCE51 /* Adventure.mp3 */; };
+		F3F3F2A12869178F008FCE51 /* PlaybackControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3F2A02869178F008FCE51 /* PlaybackControlButton.swift */; };
+		F3F3F2A328691941008FCE51 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3F2A228691941008FCE51 /* PlayerView.swift */; };
+		F3F3F2A528691999008FCE51 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3F2A428691999008FCE51 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +49,27 @@
 		F336C7AC285D51C6008F1577 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F336C7AE285D51C6008F1577 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F336C7B1285D51C6008F1577 /* SoundProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoundProject.xcdatamodel; sourceTree = "<group>"; };
+		F336C7B8285D601F008F1577 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F34C65032867F6F800350D17 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		F34C65052867F78A00350D17 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		F34C65072867F7FA00350D17 /* BibliotecaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaView.swift; sourceTree = "<group>"; };
+		F34C650C2867FD6700350D17 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		F34C650F2867FEB200350D17 /* SongsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsList.swift; sourceTree = "<group>"; };
+		F34C65112867FEE400350D17 /* SongCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCard.swift; sourceTree = "<group>"; };
+		F34C651328680B5100350D17 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		F34C651528680BFC00350D17 /* SongList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
+		F34C651928680CB600350D17 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		F34C651B286814C300350D17 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		F379BC15285D72A100C4D72D /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		F3EBEBA12862A1F5001EAAAF /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		F3EBEBA52862A312001EAAAF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F3EBEBA72862A84C001EAAAF /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		F3EBEBAB2862AF5E001EAAAF /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		F3EBEBAD2862BD22001EAAAF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F3F3F29E286912A7008FCE51 /* Adventure.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Adventure.mp3; sourceTree = "<group>"; };
+		F3F3F2A02869178F008FCE51 /* PlaybackControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackControlButton.swift; sourceTree = "<group>"; };
+		F3F3F2A228691941008FCE51 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		F3F3F2A428691999008FCE51 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +77,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F379BC10285D654B00C4D72D /* FirebaseDatabase in Frameworks */,
+				F379BC12285D654B00C4D72D /* FirebaseFirestore in Frameworks */,
+				F379BC0C285D654B00C4D72D /* FirebaseAnalytics in Frameworks */,
+				F379BC14285D654B00C4D72D /* FirebaseStorage in Frameworks */,
+				F379BC0E285D654B00C4D72D /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,12 +107,21 @@
 		F336C7A4285D51C5008F1577 /* SoundProject */ = {
 			isa = PBXGroup;
 			children = (
+				F34C650E2867FE1F00350D17 /* Components */,
+				F34C65092867FCBE00350D17 /* Models */,
+				F3EBEBAA2862AEDF001EAAAF /* Resources */,
+				F3EBEBA42862A306001EAAAF /* Screens */,
+				F3EBEB9F2862A19C001EAAAF /* UseCases */,
+				F379BC15285D72A100C4D72D /* ListView.swift */,
 				F336C7A5285D51C5008F1577 /* SoundProjectApp.swift */,
 				F336C7A7285D51C5008F1577 /* ContentView.swift */,
 				F336C7A9285D51C6008F1577 /* Assets.xcassets */,
 				F336C7AE285D51C6008F1577 /* Persistence.swift */,
 				F336C7B0285D51C6008F1577 /* SoundProject.xcdatamodeld */,
+				F336C7B8285D601F008F1577 /* GoogleService-Info.plist */,
 				F336C7AB285D51C6008F1577 /* Preview Content */,
+				F34C65032867F6F800350D17 /* TabBar.swift */,
+				F3F3F29E286912A7008FCE51 /* Adventure.mp3 */,
 			);
 			path = SoundProject;
 			sourceTree = "<group>";
@@ -71,6 +132,58 @@
 				F336C7AC285D51C6008F1577 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F34C65092867FCBE00350D17 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F34C650C2867FD6700350D17 /* Song.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F34C650E2867FE1F00350D17 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F34C650F2867FEB200350D17 /* SongsList.swift */,
+				F34C65112867FEE400350D17 /* SongCard.swift */,
+				F34C651328680B5100350D17 /* CellView.swift */,
+				F34C651528680BFC00350D17 /* SongList.swift */,
+				F34C651928680CB600350D17 /* SearchBar.swift */,
+				F3F3F2A02869178F008FCE51 /* PlaybackControlButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F3EBEB9F2862A19C001EAAAF /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F3EBEBA12862A1F5001EAAAF /* BackgroundView.swift */,
+				F3F3F2A428691999008FCE51 /* Extensions.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F3EBEBA42862A306001EAAAF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F3EBEBA52862A312001EAAAF /* LoginView.swift */,
+				F3EBEBA72862A84C001EAAAF /* RegisterView.swift */,
+				F3EBEBAD2862BD22001EAAAF /* HomeView.swift */,
+				F34C65052867F78A00350D17 /* SearchView.swift */,
+				F34C65072867F7FA00350D17 /* BibliotecaView.swift */,
+				F3F3F2A228691941008FCE51 /* PlayerView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		F3EBEBAA2862AEDF001EAAAF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F3EBEBAB2862AF5E001EAAAF /* AppViewModel.swift */,
+				F34C651B286814C300350D17 /* AudioManager.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +202,13 @@
 			dependencies = (
 			);
 			name = SoundProject;
+			packageProductDependencies = (
+				F379BC0B285D654B00C4D72D /* FirebaseAnalytics */,
+				F379BC0D285D654B00C4D72D /* FirebaseAuth */,
+				F379BC0F285D654B00C4D72D /* FirebaseDatabase */,
+				F379BC11285D654B00C4D72D /* FirebaseFirestore */,
+				F379BC13285D654B00C4D72D /* FirebaseStorage */,
+			);
 			productName = SoundProject;
 			productReference = F336C7A2285D51C5008F1577 /* SoundProject.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +237,9 @@
 				Base,
 			);
 			mainGroup = F336C799285D51C5008F1577;
+			packageReferences = (
+				F379BC0A285D654B00C4D72D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = F336C7A3285D51C5008F1577 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -132,6 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F336C7AD285D51C6008F1577 /* Preview Assets.xcassets in Resources */,
+				F3F3F29F286912A7008FCE51 /* Adventure.mp3 in Resources */,
+				F336C7B9285D601F008F1577 /* GoogleService-Info.plist in Resources */,
 				F336C7AA285D51C6008F1577 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,10 +268,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F3F2A528691999008FCE51 /* Extensions.swift in Sources */,
+				F34C650D2867FD6700350D17 /* Song.swift in Sources */,
+				F3EBEBA22862A1F5001EAAAF /* BackgroundView.swift in Sources */,
+				F3EBEBA62862A312001EAAAF /* LoginView.swift in Sources */,
+				F3F3F2A328691941008FCE51 /* PlayerView.swift in Sources */,
+				F3EBEBAC2862AF5F001EAAAF /* AppViewModel.swift in Sources */,
+				F3EBEBAE2862BD22001EAAAF /* HomeView.swift in Sources */,
+				F34C65062867F78A00350D17 /* SearchView.swift in Sources */,
 				F336C7AF285D51C6008F1577 /* Persistence.swift in Sources */,
+				F34C651428680B5100350D17 /* CellView.swift in Sources */,
 				F336C7B2285D51C6008F1577 /* SoundProject.xcdatamodeld in Sources */,
+				F34C65122867FEE400350D17 /* SongCard.swift in Sources */,
+				F3F3F2A12869178F008FCE51 /* PlaybackControlButton.swift in Sources */,
+				F379BC16285D72A100C4D72D /* ListView.swift in Sources */,
+				F3EBEBA82862A84C001EAAAF /* RegisterView.swift in Sources */,
+				F34C651628680BFC00350D17 /* SongList.swift in Sources */,
+				F34C65042867F6F800350D17 /* TabBar.swift in Sources */,
 				F336C7A8285D51C5008F1577 /* ContentView.swift in Sources */,
+				F34C651A28680CB600350D17 /* SearchBar.swift in Sources */,
+				F34C65102867FEB200350D17 /* SongsList.swift in Sources */,
 				F336C7A6285D51C5008F1577 /* SoundProjectApp.swift in Sources */,
+				F34C651C286814C300350D17 /* AudioManager.swift in Sources */,
+				F34C65082867F7FA00350D17 /* BibliotecaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +489,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F379BC0A285D654B00C4D72D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F379BC0B285D654B00C4D72D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F379BC0A285D654B00C4D72D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		F379BC0D285D654B00C4D72D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F379BC0A285D654B00C4D72D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F379BC0F285D654B00C4D72D /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F379BC0A285D654B00C4D72D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		F379BC11285D654B00C4D72D /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F379BC0A285D654B00C4D72D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		F379BC13285D654B00C4D72D /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F379BC0A285D654B00C4D72D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F336C7B0285D51C6008F1577 /* SoundProject.xcdatamodeld */ = {

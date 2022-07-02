@@ -4,85 +4,57 @@
 //
 //  Created by Mijael Cama on 17/06/22.
 //
-
 import SwiftUI
-import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-
+    @EnvironmentObject var viewModel: AppViewModel
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        NavigationView{
+            if viewModel.signedIn  {
+                TabBar()
+            }else {
+                LoginView()
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
+        }.onAppear{
+            viewModel.signedIn = viewModel.isSignedIn
         }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
+        
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView().environmentObject(AppViewModel())
     }
 }
+
+struct Message: View {
+    var body: some View {
+        Text("Millions of songs Free on TecMusic").frame(height: 100).font(.largeTitle).font(.system(size: 20, weight:.semibold)).padding(.bottom, 15)
+            
+    }
+}
+
+struct Buttons: View {
+    var body: some View {
+        
+        VStack(spacing: 18){
+            NavigationLink(destination: RegisterView().navigationTitle("Sign Up")){
+                Text("Sign up free").foregroundColor(.white).frame(width: 380, height: 50).background(Color.init(red: 30/255, green: 215/255, blue: 96/255)).cornerRadius(25).font(.system(size: 20, weight:.bold))
+            }
+            
+            Text("Continue with Facebook").foregroundColor(.white).frame(width: 380, height: 50).padding(4)
+            .overlay(
+                RoundedRectangle(cornerRadius: 25)
+                    .stroke(Color.white, lineWidth: 2)
+            ).cornerRadius(25).font(.system(size: 20, weight:.bold))
+            NavigationLink(destination: LoginView().navigationBarBackButtonHidden(true)){
+            Text("Log in").foregroundColor(.white).frame(width: 380, height: 50).cornerRadius(25).font(.system(size: 20, weight:.bold))
+            }
+        }
+    }
+}
+
+
+}
+
+
