@@ -21,37 +21,43 @@ enum Category: String {
     case regueton = "Regueton"
 }
 
-struct Song	: Identifiable {
+struct Song	: Identifiable,Hashable {
     let id:String
-    let name: String 
+    let name: String
+    let artist:String
     let artwork: String
     let category: Category.RawValue
     let albumName: String
+    let source: String
 }
-
 extension Song {
     static let all: [Song] = [
         Song(
-            id: "12",
+            id: "1",
             name: "THE WEEKND & DAFT PUNK – STARBOY",
+            artist: "The weeknd",
             artwork: "https://i.scdn.co/image/ab67616d0000b2734718e2b124f79258be7bc452",
             category: "Electronica",
-            albumName: "Sacrifice"
-            
+            albumName: "aksmlaks",
+            source: "kajajs"
+        ),
+        Song(
+            id: "12",
+            name: "THE WEEKND & DAFT PUNK – STARBOY",
+            artist: "The weeknd",
+            artwork: "https://i.scdn.co/image/ab67616d0000b2734718e2b124f79258be7bc452",
+            category: "Electronica",
+            albumName: "aksmlaks",
+            source: "kajajs"
         ),
         Song(
             id: "123",
-            name: "WOS - CANGURO",
-            artwork: "https://i.scdn.co/image/ab67616d0000b2735d9aed5c0f5f7ce3a0ea1e01",
-            category: "Trap",
-            albumName: "Sacrifice"
-        ),
-        Song(
-            id: "1234",
-            name: "THE WEEKND - Blinding Lights",
-            artwork: "https://i.scdn.co/image/ab67616d0000b273a3eff72f62782fb589a492f9",
-            category: "Pop",
-            albumName: "Sacrifice"
+            name: "THE WEEKND & DAFT PUNK – STARBOY",
+            artist: "The weeknd",
+            artwork: "https://i.scdn.co/image/ab67616d0000b2734718e2b124f79258be7bc452",
+            category: "Electronica",
+            albumName: "aksmlaks",
+            source: "kajajs"
         ),
     ]
 }

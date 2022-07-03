@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct SongsList: View {
-    var songs: [Song]
+    var songs: [Song] = []
     var action: () -> Void
+    @Binding var songSelected: Song
     var body: some View {
         VStack{
             HStack{
@@ -22,11 +23,12 @@ struct SongsList: View {
                 Spacer()
             }
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15){
-                ForEach(songs) { song in
+                ForEach(songs.indices, id:\.self) { i in
                     Button {
+                        songSelected = self.songs[i]
                         action()
                     }label: {
-                        SongCard(song: song)
+                        SongCard(song: self.songs[i])
                     }
                     
                 }
@@ -40,7 +42,7 @@ struct SongsList: View {
 struct SongsList_Previews: PreviewProvider {
     static var previews: some View {
         ScrollView {
-            SongsList(songs: Song.all, action: {print("super")})
+            SongsList(songs: Song.all , action: {print("super")},songSelected: .constant(Song.all[0]))
         }
     }
 }

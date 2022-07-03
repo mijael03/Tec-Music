@@ -19,9 +19,6 @@ final class AudioManager: ObservableObject {
     }
     @Published private(set) var isLooping: Bool = false
     @Published var songs:[Song] = []
-    init() {
-        fetchSongs()
-    }
     func startPlayer(pista: String, isPreview: Bool = false) {
         guard let url = Bundle.main.url(forResource: pista, withExtension: "mp3") else {
             print("Recurso no encontrado: \(pista)")
@@ -41,29 +38,6 @@ final class AudioManager: ObservableObject {
         } catch {
             print("Fallo al iniciar play", error)
         }
-    }
-    func getData(pista:String)-> UIImage?{
-        var artwork:UIImage?
-        guard let url = Bundle.main.url(forResource: pista, withExtension: "mp3") else {
-            print("Recurso no encontrado: \(pista)")
-            return nil
-        }
-        let playerItem = AVPlayerItem(url: url)
-        let metadataList = playerItem.asset.metadata as! [AVMetadataItem]
-        for item in metadataList {
-            if item.commonKey == nil{
-                        continue
-            }
-            if let key = item.commonKey, let value = item.value {
-                if key == .commonKeyArtwork {
-                    if let audioImage = UIImage(data: (value as! NSData) as Data) {
-                    //println(audioImage.description)
-                    artwork = audioImage
-                }
-            }
-        }
-        }
-        return artwork
     }
     
     func playPause() {
@@ -108,10 +82,29 @@ final class AudioManager: ObservableObject {
         
         radioplayer = AVPlayer.init(playerItem: playerItem)
         radioplayer!.play()
+        isPlaying = true
     }
     func pauseRadio(){
-        radioplayer!.pause()
+        if radioplayer?.timeControlStatus == .playing {
+            radioplayer!.pause()
+            isPlaying = false
+        }else {
+            radioplayer!.play()
+            isPlaying = true
+        }
         
+        
+    }
+    func stopRadio(){
+        if let play = radioplayer {
+                    print("stopped")
+                    play.pause()
+                    isPlaying = false
+                    radioplayer = nil
+                    print("player deallocated")
+                } else {
+                    print("player was already deallocated")
+                }
     }
     func fetchSongs() {
         let db = Firestore.firestore()
@@ -120,9 +113,11 @@ final class AudioManager: ObservableObject {
                 let song = Song(
                     id : document.documentID,
                     name : document.data()["title"] as! String,
+                    artist: document.data()["artist"] as! String,
                     artwork : document.data()["artwork"] as! String,
                     category : document.data()["category"] as! String,
-                    albumName : document.data()["album"] as! String
+                    albumName : document.data()["album"] as! String,
+                    source: document.data()["file"] as! String
                 )
                 print(song.name)
                 self.songs.append(song)

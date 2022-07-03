@@ -35,9 +35,10 @@
 		F3EBEBA82862A84C001EAAAF /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEBA72862A84C001EAAAF /* RegisterView.swift */; };
 		F3EBEBAC2862AF5F001EAAAF /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEBAB2862AF5E001EAAAF /* AppViewModel.swift */; };
 		F3EBEBAE2862BD22001EAAAF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEBAD2862BD22001EAAAF /* HomeView.swift */; };
+		F3EFD831286FD05A0087F0A2 /* RadioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EFD830286FD05A0087F0A2 /* RadioPlayerView.swift */; };
+		F3EFD834286FF33C0087F0A2 /* SwURL in Frameworks */ = {isa = PBXBuildFile; productRef = F3EFD833286FF33C0087F0A2 /* SwURL */; };
 		F3F3F29F286912A7008FCE51 /* Adventure.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F3F3F29E286912A7008FCE51 /* Adventure.mp3 */; };
 		F3F3F2A12869178F008FCE51 /* PlaybackControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3F2A02869178F008FCE51 /* PlaybackControlButton.swift */; };
-		F3F3F2A328691941008FCE51 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3F2A228691941008FCE51 /* PlayerView.swift */; };
 		F3F3F2A528691999008FCE51 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3F2A428691999008FCE51 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,9 +67,9 @@
 		F3EBEBA72862A84C001EAAAF /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		F3EBEBAB2862AF5E001EAAAF /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		F3EBEBAD2862BD22001EAAAF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F3EFD830286FD05A0087F0A2 /* RadioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerView.swift; sourceTree = "<group>"; };
 		F3F3F29E286912A7008FCE51 /* Adventure.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Adventure.mp3; sourceTree = "<group>"; };
 		F3F3F2A02869178F008FCE51 /* PlaybackControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackControlButton.swift; sourceTree = "<group>"; };
-		F3F3F2A228691941008FCE51 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		F3F3F2A428691999008FCE51 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3EFD834286FF33C0087F0A2 /* SwURL in Frameworks */,
 				F379BC10285D654B00C4D72D /* FirebaseDatabase in Frameworks */,
 				F379BC12285D654B00C4D72D /* FirebaseFirestore in Frameworks */,
 				F379BC0C285D654B00C4D72D /* FirebaseAnalytics in Frameworks */,
@@ -172,7 +174,7 @@
 				F3EBEBAD2862BD22001EAAAF /* HomeView.swift */,
 				F34C65052867F78A00350D17 /* SearchView.swift */,
 				F34C65072867F7FA00350D17 /* BibliotecaView.swift */,
-				F3F3F2A228691941008FCE51 /* PlayerView.swift */,
+				F3EFD830286FD05A0087F0A2 /* RadioPlayerView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -208,6 +210,7 @@
 				F379BC0F285D654B00C4D72D /* FirebaseDatabase */,
 				F379BC11285D654B00C4D72D /* FirebaseFirestore */,
 				F379BC13285D654B00C4D72D /* FirebaseStorage */,
+				F3EFD833286FF33C0087F0A2 /* SwURL */,
 			);
 			productName = SoundProject;
 			productReference = F336C7A2285D51C5008F1577 /* SoundProject.app */;
@@ -239,6 +242,7 @@
 			mainGroup = F336C799285D51C5008F1577;
 			packageReferences = (
 				F379BC0A285D654B00C4D72D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F3EFD832286FF33C0087F0A2 /* XCRemoteSwiftPackageReference "SwURL" */,
 			);
 			productRefGroup = F336C7A3285D51C5008F1577 /* Products */;
 			projectDirPath = "";
@@ -272,7 +276,6 @@
 				F34C650D2867FD6700350D17 /* Song.swift in Sources */,
 				F3EBEBA22862A1F5001EAAAF /* BackgroundView.swift in Sources */,
 				F3EBEBA62862A312001EAAAF /* LoginView.swift in Sources */,
-				F3F3F2A328691941008FCE51 /* PlayerView.swift in Sources */,
 				F3EBEBAC2862AF5F001EAAAF /* AppViewModel.swift in Sources */,
 				F3EBEBAE2862BD22001EAAAF /* HomeView.swift in Sources */,
 				F34C65062867F78A00350D17 /* SearchView.swift in Sources */,
@@ -283,6 +286,7 @@
 				F3F3F2A12869178F008FCE51 /* PlaybackControlButton.swift in Sources */,
 				F379BC16285D72A100C4D72D /* ListView.swift in Sources */,
 				F3EBEBA82862A84C001EAAAF /* RegisterView.swift in Sources */,
+				F3EFD831286FD05A0087F0A2 /* RadioPlayerView.swift in Sources */,
 				F34C651628680BFC00350D17 /* SongList.swift in Sources */,
 				F34C65042867F6F800350D17 /* TabBar.swift in Sources */,
 				F336C7A8285D51C5008F1577 /* ContentView.swift in Sources */,
@@ -499,6 +503,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		F3EFD832286FF33C0087F0A2 /* XCRemoteSwiftPackageReference "SwURL" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cmtrounce/SwURL.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -526,6 +538,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F379BC0A285D654B00C4D72D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		F3EFD833286FF33C0087F0A2 /* SwURL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3EFD832286FF33C0087F0A2 /* XCRemoteSwiftPackageReference "SwURL" */;
+			productName = SwURL;
 		};
 /* End XCSwiftPackageProductDependency section */
 
