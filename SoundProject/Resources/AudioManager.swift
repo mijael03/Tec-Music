@@ -10,7 +10,6 @@ import AVKit
 import Firebase
 final class AudioManager: ObservableObject {
     //static let shared = AudioManager()
-    var player: AVAudioPlayer?
     var radioplayer: AVPlayer?
     @Published private(set) var isPlaying: Bool = false {
         didSet {
@@ -21,59 +20,6 @@ final class AudioManager: ObservableObject {
     @Published var songs:[Song] = []
     init (){
         fetchSongs()
-    }
-    func startPlayer(pista: String, isPreview: Bool = false) {
-        guard let url = Bundle.main.url(forResource: pista, withExtension: "mp3") else {
-            print("Recurso no encontrado: \(pista)")
-            return
-        }
-        
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-            try AVAudioSession.sharedInstance().setActive(true)
-            player = try AVAudioPlayer(contentsOf: url)
-            if isPreview {
-                player?.prepareToPlay()
-            } else {
-                player?.play()
-                isPlaying = true
-            }
-        } catch {
-            print("Fallo al iniciar play", error)
-        }
-    }
-    
-    func playPause() {
-        guard let player = player else {
-            print("Audio play no funciona")
-            return
-        }
-
-        if player.isPlaying {
-            player.pause()
-            isPlaying = false
-        } else {
-            player.play()
-            isPlaying = true
-        }
-    }
-
-    func stop() {
-        guard let player = player else { return }
-
-        if player.isPlaying {
-            player.stop()
-            isPlaying = false
-        }
-    }
-
-    func toggleLoop() {
-        guard let player = player else {
-            return
-        }
-        player.numberOfLoops = player.numberOfLoops == 0 ? -1 : 0
-        isLooping = player.numberOfLoops != 0
-        print("isLooping", isLooping)
     }
     func loadRadio(radioURL: String) {
 
