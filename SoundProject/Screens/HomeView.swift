@@ -18,11 +18,6 @@ struct HomeView: View {
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
                 navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
-    func fetchinit() {
-        isLoading = true
-        audioManager.fetchSongs()
-        isLoading = false
-    }
     var body: some View {
         NavigationView{
             ZStack{
@@ -46,15 +41,23 @@ struct HomeView: View {
                     }
                 }
                 .navigationTitle("Menu")
+                
             }
             .navigationViewStyle(.stack)
             .fullScreenCover(isPresented: $showPlayer, content: {RadioPlayerView(song: songSelected)})
-        }.onAppear{fetchinit()}
+        }
+        .toolbar(content: {
+                Button {
+                    viewModel.signOut()
+                } label: {
+                    Label("Sign Out", systemImage: "rectangle.portrait.and.arrow.forward")
+                }
+            }).accentColor(.red)
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView().environmentObject(AudioManager())
     }
 }

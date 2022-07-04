@@ -11,6 +11,7 @@ import CoreMedia
 import FirebaseStorage
 struct RadioPlayerView: View {
     @EnvironmentObject var audioManager: AudioManager
+    @State var seekPos = 0.0
     var song: Song
     var isPreview: Bool = false
     @State private var value: Double = 0.0
@@ -33,7 +34,18 @@ struct RadioPlayerView: View {
     let timer = Timer
         .publish(every: 1, on: .main, in: .common)
         .autoconnect()
-    
+    func addseconds() {
+        let currentTime = audioManager.radioplayer!.currentTime();
+        let timeToAdd   = CMTimeMakeWithSeconds(10,preferredTimescale: 1);
+        let resulttime = CMTimeAdd(currentTime, timeToAdd)
+        audioManager.radioplayer?.seek(to: resulttime)
+    }
+    func substractseconds(){
+        let currentTime = audioManager.radioplayer!.currentTime();
+        let timeToSubstract   = CMTimeMakeWithSeconds(10,preferredTimescale: 1);
+        let resulttime = CMTimeSubtract(currentTime, timeToSubstract)
+        audioManager.radioplayer?.seek(to: resulttime)
+    }
     var body: some View {
         ZStack{
             //imagen de fondo
@@ -68,7 +80,7 @@ struct RadioPlayerView: View {
                             .foregroundColor(.white)
                     }
                     Spacer()
-                }
+                }.padding(10)
                 
                 //titulo
                 Text(song.name)
@@ -78,72 +90,39 @@ struct RadioPlayerView: View {
                 Text("\(song.albumName) - \(song.artist)")
                     .font(.body)
                     .foregroundColor(.white)
-                
                 Spacer()
-                
-                PlaybackControlButton(systemName: audioManager.isPlaying ? "pause.circle.fill" : "play.circle.fill", fontSize: 44){
-                    audioManager.pauseRadio()
                 }
-                
-                //Playback
-                if let radioplayer = audioManager.player{
-                VStack(spacing: 5) {
-                    //playback recorrido timeline
-                    Slider(value: $value, in: 0...radioplayer.duration) {
-                        editing in
-                        print("editing", editing)
-                        isEditing = editing
-                        if !editing {
-                            radioplayer.currentTime = value
-                        }
-                    }
-                        .accentColor(.white)
-                    //playback time
-                    HStack {
-                        Text(DateComponentsFormatter.posicion.string(from: radioplayer.currentTime) ?? "0:00")
-                        Spacer()
-                        Text(DateComponentsFormatter.posicion.string(from: radioplayer.duration - radioplayer.currentTime) ?? "0:00")
-                    }
-                    .font(.caption)
-                    .foregroundColor(.white)
-                }
-                //controles de la musica
                 HStack{
-                   
+                    
                     Spacer()
                     //boton de retroceso 10s
                     PlaybackControlButton(systemName: "gobackward.10"){
-                        radioplayer.currentTime -= 10
+                        substractseconds()
                     }
                     Spacer()
                     //boton de play/pausa
                     PlaybackControlButton(systemName: audioManager.isPlaying ? "pause.circle.fill" : "play.circle.fill", fontSize: 44){
-                        audioManager.playPause()
+                        audioManager.pauseRadio()
                     }
                     Spacer()
                     //boton de avanzar 10s
                     PlaybackControlButton(systemName: "goforward.10"){
-                        radioplayer.currentTime += 10
+                        addseconds()
                     }
                     Spacer()
                     //boton de stop
                     
-                }
-                }
-            }
+            }.frame(maxHeight: .infinity, alignment: .bottom)
             .padding(20)
         }
+        
         .onAppear {
            // AudioManager.shared.startPlayer(pista: tecmusicVM.tecmusic.pista, isPreview: isPreview)
             
             audioManager.loadRadio(radioURL: song.source )
             
         }
-        .onReceive(timer) {
-            _ in
-            guard let player = audioManager.player, !isEditing else { return }
-            value = player.currentTime
-        }
+        
     }
 }
 

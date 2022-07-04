@@ -19,6 +19,9 @@ final class AudioManager: ObservableObject {
     }
     @Published private(set) var isLooping: Bool = false
     @Published var songs:[Song] = []
+    init (){
+        fetchSongs()
+    }
     func startPlayer(pista: String, isPreview: Bool = false) {
         guard let url = Bundle.main.url(forResource: pista, withExtension: "mp3") else {
             print("Recurso no encontrado: \(pista)")

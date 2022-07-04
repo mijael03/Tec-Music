@@ -7,11 +7,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var audioManager = AudioManager()
     @EnvironmentObject var viewModel: AppViewModel
     var body: some View {
         NavigationView{
             if viewModel.signedIn  {
-                TabBar()
+                TabBar().environmentObject(audioManager)
             }else {
                 LoginView()
             }

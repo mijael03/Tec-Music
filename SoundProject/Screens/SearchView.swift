@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct SearchView: View {
+    @EnvironmentObject var audioManager: AudioManager
+    @State var searchText = ""
+    @State var showPlayer = false
+    @State var songSelected: Song?
+    private var filteredSongs : [Song] {
+        var filter = audioManager.songs.filter{$0.name.localizedCaseInsensitiveContains(searchText)}
+        return filter
+    }
 //    init() {
 //        let navBarAppearance = UINavigationBar.appearance()
 //        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
@@ -22,43 +30,34 @@ struct SearchView: View {
                 ]),startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea(.all, edges: .all)
                 VStack{
-                    Search()
+                    HStack {
+                       Image(systemName: "auriculares").foregroundColor(.white)
+                       TextField("Search ..", text: $searchText).foregroundColor(.white)
+                        
+                    }.font(.headline).padding().background(RoundedRectangle(cornerRadius: 25).fill(Color(red: 29/255, green: 28/255, blue: 28/255)).shadow(color: .black, radius: 10, x:0, y:0))
+                    if searchText == ""{
+                        Text("search a song ...")
+                    }else {
+                        List {
+                            ForEach(filteredSongs.indices, id:\.self) { i in
+                                Button {
+//                                    songSelected = filteredSongs[i]
+//                                    showPlayer = true
+                                    print(filteredSongs[i])
+                                }label: {
+                                    cellView(song: filteredSongs[i])
+                                }
+                                
+                            }
+                        }.listStyle(PlainListStyle())
+                    }
+                    
 
                 }
             }
             .navigationTitle("Buscador")
+            .fullScreenCover(isPresented: $showPlayer, content: {RadioPlayerView(song: songSelected!)})
         }
-    }
-}
-
-    
-struct Search: View {
-    @State var searchText = ""
-    var body: some View {
-        VStack{
-            HStack {
-               Image(systemName: "auriculares").foregroundColor(.white)
-               TextField("Search ..", text: $searchText).foregroundColor(.white)
-                
-            }.font(.headline).padding().background(RoundedRectangle(cornerRadius: 25).fill(Color(red: 29/255, green: 28/255, blue: 28/255)).shadow(color: .black, radius: 10, x:0, y:0))
-            List {
-                ForEach(0...10, id: \.self){_ in
-                    cellView()
-                }
-            }.listStyle(PlainListStyle())
-            
-            
-        }
-         
-    }
-}
-struct Background: View {
-    
-    let colors: [Color] = [Color(#colorLiteral(red: 0.09846583549, green: 0.09846583549, blue: 0.09846583549, alpha: 1)), Color(#colorLiteral(red: 0.09846583549, green: 0.09846583549, blue: 0.09846583549, alpha: 1)), Color(#colorLiteral(red: 0.09846583549, green: 0.09846583549, blue: 0.09846583549, alpha: 1)), Color(#colorLiteral(red: 0.09846583549, green: 0.09846583549, blue: 0.09846583549, alpha: 1)), Color(#colorLiteral(red: 0.09846583549, green: 0.09846583549, blue: 0.09846583549, alpha: 1)), Color(#colorLiteral(red: 0.1140098769, green: 0.1140098769, blue: 0.1140098769, alpha: 1)), Color(#colorLiteral(red: 0.1295539184, green: 0.1295539184, blue: 0.1295539184, alpha: 1)), Color(#colorLiteral(red: 0.1969114313, green: 0.1969114313, blue: 0.1969114313, alpha: 1)), Color(#colorLiteral(red: 0.2433816386, green: 0.2433816386, blue: 0.2433816386, alpha: 1)), Color(#colorLiteral(red: 0.2796510687, green: 0.2796510687, blue: 0.2796510687, alpha: 1)), Color(#colorLiteral(red: 0.3628764573, green: 0.3628764573, blue: 0.3628764573, alpha: 1))]
-    
-    var body: some View{
-        LinearGradient(gradient: Gradient(colors: colors), startPoint: .bottom, endPoint: .top)
-        .edgesIgnoringSafeArea(.all)
     }
 }
 //struct SongLists: View {
@@ -68,14 +67,24 @@ struct Background: View {
 //}
 
 struct cellView : View {
+    var song:Song
     var body : some View{
-        HStack{ Image("auriculares").resizable().scaledToFit().frame(height: 70).cornerRadius(4)
-        VStack(alignment: .leading, spacing: 5){
-        Text("Cancion del momento").fontWeight(.semibold).foregroundColor(.white)
-            Text("Cancion del momento subtitulo").font(.subheadline).lineLimit(2).foregroundColor(.white)
-            
-        }
-        }.listRowBackground(Color.clear)
+            HStack{  AsyncImage(url: URL(string: song.artwork)) { image in image
+                .resizable().scaledToFit().frame(height: 70).cornerRadius(4)}
+            placeholder: {
+                Image(systemName: "photo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 70)
+                    .cornerRadius(4)
+            }
+            VStack(alignment: .leading, spacing: 5){
+                Text(song.name).fontWeight(.semibold).foregroundColor(.black)
+                Text("\(song.albumName) - \(song.artist)").font(.subheadline).lineLimit(2).foregroundColor(.black)
+                
+            }
+            }.background(Color.clear)
+//        }.listRowBackground(Color.blue)
     }
 }
 struct SearchView_Previews: PreviewProvider {

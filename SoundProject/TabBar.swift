@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabBar: View {
+    @EnvironmentObject var audioManager: AudioManager
     init() {
         UITabBar.appearance().unselectedItemTintColor = UIColor.black
     }
@@ -23,7 +24,7 @@ struct TabBar: View {
                 Label("Buscador", systemImage: "magnifyingglass")
                     .foregroundColor(Color.black)
                 }
-            BibliotecaView()
+            BibliotecaView().environmentObject(AudioManager())
                 .tabItem {
                     Label("Biblioteca" , systemImage: "square.fill.text.grid.1x2")
                         .foregroundColor(Color.black)
