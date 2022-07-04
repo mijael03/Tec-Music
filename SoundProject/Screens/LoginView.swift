@@ -19,7 +19,7 @@ struct LoginView: View {
                 Image("TecMusic").resizable().padding().frame(width: 325, height: 300)
                 Text("Email or username").frame(height: 60).font(.largeTitle).font(.system(size: 20, weight:.semibold))
                 
-                TextField("", text: $email).padding().background(Color.init(red: 83/255, green: 82/255, blue: 83/255))
+                TextField("", text: $email).textInputAutocapitalization(.never).disableAutocorrection(true).padding().background(Color.init(red: 83/255, green: 82/255, blue: 83/255))
                 
                 Text("Password").frame(height: 80).font(.largeTitle).font(.system(size: 20, weight:.semibold)).padding(.all, 2)
                 
