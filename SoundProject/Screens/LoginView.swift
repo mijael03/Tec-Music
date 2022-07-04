@@ -16,14 +16,14 @@ struct LoginView: View {
         ZStack{
             BackgroundView()
             VStack{
-                Image("TecMusic").resizable().padding(50).frame(width: 325, height: 300)
-                Text("Email or username").frame(height: 80).font(.largeTitle).font(.system(size: 20, weight:.semibold)).padding(.all, 2)
+                Image("TecMusic").resizable().padding().frame(width: 325, height: 300)
+                Text("Email or username").frame(height: 60).font(.largeTitle).font(.system(size: 20, weight:.semibold))
                 
                 TextField("", text: $email).padding().background(Color.init(red: 83/255, green: 82/255, blue: 83/255))
                 
                 Text("Password").frame(height: 80).font(.largeTitle).font(.system(size: 20, weight:.semibold)).padding(.all, 2)
                 
-                SecureField("", text: $pass).padding().background(Color.init(red: 83/255, green: 82/255, blue: 83/255))
+                SecureField("", text: $pass).padding().background(Color.init(red: 83/255, green: 82/255, blue: 83/255)).padding(.bottom)
                 Button {
                     guard !email.isEmpty, !pass.isEmpty else {
                         return
@@ -34,7 +34,7 @@ struct LoginView: View {
                     Text("Log in").fontWeight(.bold).foregroundColor(.white).frame(width: 150, height: 25).padding().background(Color.init(red: 30/255, green: 215/255, blue: 96/255)).cornerRadius(25)
                 
                 
-                }.padding()
+                }
                 HStack {
                     Text("already have an account?")
                     Button {
@@ -45,7 +45,7 @@ struct LoginView: View {
                         }
                         
                     }
-                }
+                }.padding([.bottom,.leading,.trailing])
                 
                 if viewModel.errors == "" {
                     
@@ -53,7 +53,7 @@ struct LoginView: View {
                     Text(viewModel.errors).foregroundColor(Color.red)
                     
                 }
-            }.padding()
+            }.padding(.bottom)
         }.foregroundColor(.white).alert(isPresented: $presentAlert) {
             Alert(title: Text(viewModel.errors))}
     }
